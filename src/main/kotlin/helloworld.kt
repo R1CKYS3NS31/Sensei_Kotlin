@@ -2,7 +2,7 @@ import java.io.File
 
 fun main(){
     println("hello world")
-    val files=File("test").listFiles()
+    val files=File("test.txt").listFiles()
     println(files?.size)//if not null shorthand
     println(files?.size?:"empty")//if not null else shorthand
     var a=1
