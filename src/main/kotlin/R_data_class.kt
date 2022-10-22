@@ -14,15 +14,17 @@ fun main(){
     println("user == thirdUser: ${user==thirdUser}")
 
     //hashCode() function
-    println(user.hashCode())//matching attributes have same hashCode()
+    println("hashCode function")
+    println("user hashCode: ${user.hashCode()}") // matching attributes have same hashCode()
     println(secondUser.hashCode())
     println(thirdUser.hashCode())
 
     //copy() function
+    println("copy function")
     println(user.copy())//generates new user
     println(user===user.copy())
     println(user.copy("Joan"))//new instance as user
-    println(user.copy(id = 3))//copy() changes the value despite of property order
+    println(user.copy(id = 3))//copy() changes the value despite property order
 
     println("name = ${user.component1()}")//invokes value in order of declaration
     println("id = ${user.component2()}")
