@@ -12,7 +12,7 @@ class constructors{
     init {
         println("init block")
     }
-    constructor(i: Int){//secondary constructor
+    constructor(i: Int){ //secondary constructor
         println("constructor $i")
     }
 }
