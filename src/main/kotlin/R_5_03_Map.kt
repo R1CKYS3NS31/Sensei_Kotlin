@@ -12,7 +12,6 @@ fun updatePointsCredit(accountId: Int) {
         println("Error:Trying to update a non-existing account (id: $accountId)")
     }
 }
-
 fun accountsReport() {
     println("EZ-pass report: ")
     EZPassReport.forEach { (k, v) ->
@@ -20,7 +19,6 @@ fun accountsReport() {
     }//iterates immutable map and prints kye/value pairs
     //using lambda function
 }
-
 fun main() {
     accountsReport()//reads account points balance before updates
     updatePointsCredit(1)//updates an existing account

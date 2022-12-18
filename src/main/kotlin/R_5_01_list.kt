@@ -5,11 +5,9 @@ val sudoers: List<Int> = systemUsers // cast MutableList to immutable/read-only 
 fun addSystemUser(newUser: Int) {
     systemUsers.add(newUser) // update the MutableList
 }
-
 fun getSysSudoers(): List<Int> {
     return sudoers
 }
-
 fun main() {
     addSystemUser(4)
     println("Tot sudoers: ${getSysSudoers().size}")

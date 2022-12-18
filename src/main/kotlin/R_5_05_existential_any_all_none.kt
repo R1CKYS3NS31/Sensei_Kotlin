@@ -12,7 +12,6 @@ fun main() {
 //    Function all returns true if all elements in collection match the given predicate.
     val allEven = numbers.all { it % 2 == 0 }
     val allLess6 = numbers.any { it < 6 }
-
     println("----------------------------------------------")
     println("All even numbers: $allEven")
     println("all numbers greater than 6: $allLess6")
