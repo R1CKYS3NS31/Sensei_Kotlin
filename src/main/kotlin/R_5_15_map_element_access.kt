@@ -1,5 +1,7 @@
 fun main() {
     val map = mapOf("key" to 42)
+//    When applied to a map, `[]` operator returns the value corresponding to the given key,
+//    or `null` if there is no such key in the map.
     val value1 = map["key"]
     val value2 = map["key2"]
     val value3 = map.getValue("key")
