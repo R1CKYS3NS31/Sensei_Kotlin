@@ -23,7 +23,6 @@ fun main(){
             }
         }
     }
-
     printNonNull(null)
     printNonNull("Ricky")
     printIfBothNonNull("First","Second")
