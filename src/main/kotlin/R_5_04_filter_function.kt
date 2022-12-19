@@ -7,5 +7,4 @@ fun main() {
     println("Numbers: $numbers")
     println("poditive numbers: $positives")
     println("negative numbers: $negatives")
-
 }
