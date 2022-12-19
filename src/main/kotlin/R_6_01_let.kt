@@ -2,7 +2,7 @@ fun customPrint(s:String){
     print(s.toUpperCase())
 }
 fun main(){
-    val empty = "test".let {
+    val empty = "test".let {// returns value of this expression
         customPrint(it)
         it.isEmpty()
     }
@@ -23,6 +23,7 @@ fun main(){
             }
         }
     }
+
     printNonNull(null)
     printNonNull("Ricky")
     printIfBothNonNull("First","Second")
