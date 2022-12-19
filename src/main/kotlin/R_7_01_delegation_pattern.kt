@@ -19,4 +19,3 @@ fun main() {
     val sensei = Sensei("Dancin' to the Jailhouse Rock")
     sensei.makeSound()
 }
-
