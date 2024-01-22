@@ -1,7 +1,5 @@
 const val POINTS_X_PASS: Int = 15
-val EZPassAccounts: MutableMap<Int, Int> = mutableMapOf(1 to 100, 2 to 200, 3 to 300)
-
-//creates mutable map
+val EZPassAccounts: MutableMap<Int, Int> = mutableMapOf(1 to 100, 2 to 200, 3 to 300) //creates mutable map
 val EZPassReport: Map<Int, Int> = EZPassAccounts // creates read-only view of the map
 fun updatePointsCredit(accountId: Int) {
     if (EZPassAccounts.containsKey(accountId)) {
@@ -12,6 +10,7 @@ fun updatePointsCredit(accountId: Int) {
         println("Error:Trying to update a non-existing account (id: $accountId)")
     }
 }
+
 fun accountsReport() {
     println("EZ-pass report: ")
     EZPassReport.forEach { (k, v) ->
@@ -19,6 +18,7 @@ fun accountsReport() {
     }//iterates immutable map and prints kye/value pairs
     //using lambda function
 }
+
 fun main() {
     accountsReport()//reads account points balance before updates
     updatePointsCredit(1)//updates an existing account
@@ -26,6 +26,13 @@ fun main() {
     updatePointsCredit(2)
     updatePointsCredit(5)//Tries to update a non-existing account :prints an error message
     accountsReport()//reads the account points balance,after updates
+
+    EZPassAccounts.put(4, 400)
+    EZPassAccounts.remove(3)
+    println(EZPassReport)
+    println("keys: ${EZPassReport.keys}")
+    println("values: ${EZPassReport.values}")
+    println(200 in EZPassReport) // false
 }
 
 //map is a collection of key/value pairs,where each key is unique
