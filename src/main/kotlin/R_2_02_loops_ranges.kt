@@ -28,7 +28,7 @@ fun main() {
             7 -> println("Sunday")
             else -> println("invalid day number")
         }
-    today(6)
+    today(2)
 
 //    while loop
     var cakesEaten = 0
