@@ -19,4 +19,11 @@ fun main() {
     customers *= 2 // Example of multiplication: 30
     customers /= 3 // Example of division: 10
     println(customers) // 10
+
+    val c: Int = 1000
+    val d: String = "log message"
+    val e: Double = 3.14
+    val f: Long = 100_000_000_000_000
+    val g: Boolean = false
+    val h: Char = '\n'
 }
