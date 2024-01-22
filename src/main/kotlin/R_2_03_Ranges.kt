@@ -1,10 +1,10 @@
 fun main(){
     print("numbers 1 to 10 range:")
-    for (a in 1..10) { //iterating over range and includes 10
+    for (a in 1..10) { //iterating over range and includes 10 inclusive
         print("\t$a")
     }
     print("\nnumbers 1 until 10 range:")
-    for (a in 1 until 10) {  //iterating over range and does not include 10
+    for (a in 1 until 10) {  //iterating over range and does not include 10 exclusive
         print("\t$a")
     }
     print("\nnumbers in two steps from 1 to 10:")
