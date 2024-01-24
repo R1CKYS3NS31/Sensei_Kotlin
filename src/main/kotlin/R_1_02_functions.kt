@@ -10,6 +10,8 @@ fun add(x: Int, y: Int): Int {//returns int
     return x + y
 }
 
+/* return from function */
+
 fun multiply(x: Int, y: Int) = x * y//returns inferred int
 fun main() {
     printMessage("my name is Ricky")
@@ -18,4 +20,6 @@ fun main() {
     printMessageWithPrefix(prefix = "Sensei", message = "I got you...")
     println("the sum is ${add(56, 32)}")
     println("The multiplication is ${multiply(32, 65)}")
+
+    println({ string: String -> string.capitalize() }("ricky sensei"))
 }
