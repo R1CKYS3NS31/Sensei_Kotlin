@@ -22,8 +22,12 @@ fun main() {
     println(upperCase6("sensei"))
     println({ string: String -> string.capitalize() }("ricky sensei"))
 
-    val timeInMinutes = listOf(2,10,15,1)
+    val timeInMinutes = listOf(2, 10, 15, 1)
     val min2sec = toSeconds("minutes")
     val totalTimeInSeconds = timeInMinutes.map(min2sec).sum()
     println("Total time is $totalTimeInSeconds secs")
+
+    println(listOf(1, 2, 3).fold(0) { x, item ->
+        x + item
+    })
 }
