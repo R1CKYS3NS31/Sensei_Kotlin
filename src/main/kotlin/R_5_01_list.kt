@@ -1,9 +1,10 @@
-val systemUsers: MutableList<Int> = mutableListOf(1, 2, 3)
-val sudoers: List<Int> = systemUsers // cast MutableList to immutable/read-only view list
+val _sudoers: MutableList<Int> = mutableListOf(1, 2, 3)
+val sudoers: List<Int>
+    get()= _sudoers // cast MutableList to immutable/read-only view list
 // A list is an ordered collection of items. In Kotlin, lists can be either mutable (MutableList) or read-only (List).
 
 fun addSystemUser(newUser: Int) {
-    systemUsers.add(newUser) // update the MutableList
+    _sudoers.add(newUser) // update the MutableList
 }
 
 fun getSysSudoers(): List<Int> {
@@ -21,6 +22,6 @@ fun main() {
 //    getSysSudoers().add(5) // error
 
     println(3 in sudoers)
-    systemUsers.remove(3)
+    _sudoers.remove(3)
     println(sudoers)
 }

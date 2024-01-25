@@ -26,4 +26,24 @@ fun main() {
     val f: Long = 100_000_000_000_000
     val g: Boolean = false
     val h: Char = '\n'
+
+    println(
+        """
+        Not 
+        trimmed
+        text
+    """
+    )
+    println(
+        """
+        trimmed
+        text
+    """.trimIndent()
+    )
+    val t = """trimmed to margin text:
+        |if(a>1){
+        |return t
+        |}""".trimMargin()
+
+    println(t)
 }
