@@ -21,6 +21,21 @@ fun main() {
 
     nonLocalReturn()
     localReturnWithLabel()
+
+    /* or initialize as lambda */
+    val isEven = IntPredicate { it % 2 == 0 }
+    println("Is 7 even? ${isEven.accept(7)}")
+}
+
+/* Single Abstract Method - SAM */
+fun interface IntPredicate {
+    fun accept(i: Int): Boolean
+}
+
+val isEven = object : IntPredicate {
+    override fun accept(i: Int): Boolean {
+        return i % 2 == 0
+    }
 }
 
 fun nonLocalReturn() {
@@ -30,8 +45,8 @@ fun nonLocalReturn() {
 //    }
 //    println("this point is unreachable")
     run loop@{
-        listOf(1,2,3,4,5).forEach{
-            if (it ==3) return@loop // non-local return from the lambda passed to run
+        listOf(1, 2, 3, 4, 5).forEach {
+            if (it == 3) return@loop // non-local return from the lambda passed to run
             println(it)
         }
     }
