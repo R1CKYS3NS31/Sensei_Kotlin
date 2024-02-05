@@ -16,6 +16,11 @@ class Point(val x: Double, val y: Double) {
     }
 }
 
+fun Point.Companion.printCompanion() {
+    println("companion of Point")
+}
+
 fun main() {
-    BigBen.getBongs(12)
+    BigBen.getBongs(4)
+    Point.printCompanion()
 }
