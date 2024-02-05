@@ -43,6 +43,8 @@ fun main() {
         bakeCake()
         cakesBaked++
     } while (cakesBaked < cakesEaten)
+
+    breakAndContinueLabel()
 }
 
 fun eatACake() {
@@ -51,4 +53,13 @@ fun eatACake() {
 
 fun bakeCake() {
     println("baking cake") //
+}
+
+fun breakAndContinueLabel(){
+    loop@ for (i in 1 until 100){ // labels and expression
+        for (j in 1..100){
+            println("$i .. $j")
+            if (j == 60) break@loop
+        }
+    }
 }
