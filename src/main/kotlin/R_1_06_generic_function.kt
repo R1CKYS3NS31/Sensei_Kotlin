@@ -1,8 +1,13 @@
 fun <E> mutableDecimals(vararg elements: E) = mutableSetOf(*elements) //E is any-letter generic type parameter
 
 /* generic constraints */
+// upper bounds
 fun <T : Comparable<T>> sort(list: List<T>) {
     return println(list)
+}
+
+fun <T> T.basicString(other: T): String { // extension fun
+    return other.toString()
 }
 
 fun main() {
@@ -14,3 +19,4 @@ fun main() {
 //    sort(listOf(HashMap<Int, String>())) // Error: HashMap<Int, String> is not a subtype of Comparable<HashMap<Int, String>>
 }
 
+/* research about reified */

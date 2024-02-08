@@ -19,3 +19,5 @@ fun main() {
         println(month)
     }
 }
+
+/* use "as" for casting types */

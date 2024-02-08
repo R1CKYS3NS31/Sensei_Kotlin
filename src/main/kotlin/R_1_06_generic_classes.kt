@@ -24,3 +24,33 @@ fun main() {
         println(stack)
     }
 }
+
+interface Source<out T> {
+    fun nextT(): T
+}
+
+fun outdemo(strs: Source<String>) {
+    val objects: Source<Any> = strs // This is OK, since T is an out-parameter
+}
+
+// variance
+//interface Comparable<in T> {
+//    /* complementary variance annotation: in. It makes a type parameter contravariant,
+//     *meaning it can only be consumed and never produced (opposite to out)
+//     **/
+//    operator fun compareTo(other: T): Int
+//}
+//
+//fun indemo(x: Comparable<Number>) {
+//    x.compareTo(1.0)// 1.0 has type Double, which is a subtype of Number
+//    // Thus, you can assign x to a variable of type Comparable<Double>
+//    val y: Comparable<Double> = x // OK!
+////    val z: Comparable<String> = x // Error!
+//}
+
+/* start projections */
+/*
+* Function<*, String> means Function<in Nothing, String>.
+* Function<Int, *> means Function<Int, out Any?>.
+* Function<*, *> means Function<in Nothing, out Any?>.
+* */
