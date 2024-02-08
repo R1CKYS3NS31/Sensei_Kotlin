@@ -13,7 +13,7 @@ fun cases(obj: Any): Any {
     when (obj) {
         1 -> println("One")
         "Hello" -> println("Greeting")
-        is Long -> println("Long")
+        is Long -> println("Long") // type checker and smart cast if true
         !is String -> println("Not a String")
         else -> println("Unknown")
     }

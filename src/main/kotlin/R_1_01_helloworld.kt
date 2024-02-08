@@ -26,6 +26,7 @@ fun main() {
     val f: Long = 100_000_000_000_000
     val g: Boolean = false
     val h: Char = '\n'
+    val i: String? = e as? String // safe smart cast
 
     /* multiline strings*/
     println(
