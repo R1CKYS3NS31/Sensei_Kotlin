@@ -1,3 +1,6 @@
+import java.util.function.BinaryOperator
+import java.util.function.IntBinaryOperator
+
 enum class Color(private val rgb: Int) {
     //has property rgb
     RED(0xFF0000),//each instance must pass argument for the constructor parameter
@@ -12,6 +15,18 @@ enum class State {
     IDLE,
     RUNNING,
     FINISHED
+}
+
+/* implementing interfaces in enum class*/
+enum class IntArithmetics : BinaryOperator<Int>, IntBinaryOperator {
+    PLUS {
+        override fun apply(t: Int, u: Int): Int = t + u
+    },
+    TIMES {
+        override fun apply(t: Int, u: Int): Int = t * u
+    };
+
+    override fun applyAsInt(left: Int, right: Int): Int = apply(left, right)
 }
 
 fun main() {
@@ -30,4 +45,9 @@ fun main() {
     }
     println(message)
 
+    val a = 12
+    val b = 21
+    for (r in IntArithmetics.values()) {
+        println("$r($a,$b) = ${r.apply(a, b)}")
+    }
 }
