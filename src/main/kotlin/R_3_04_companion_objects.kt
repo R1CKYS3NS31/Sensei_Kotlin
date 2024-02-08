@@ -17,7 +17,7 @@ class Point(val x: Double, val y: Double) {
 }
 
 fun Point.Companion.printCompanion() {
-    println("companion of Point")
+    println("companion of Point: ${fromPolar(3.45,43.55).x}")
 }
 
 fun main() {
