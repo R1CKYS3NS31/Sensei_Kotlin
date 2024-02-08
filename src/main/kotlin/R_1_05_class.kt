@@ -1,6 +1,15 @@
 class Customer
 class Contact(val id: Int, var email: String)//constructor with two parameters
 
+/* nested class */
+class Outer {
+    private val bar: Int = 1
+
+    inner class Inner {
+        fun foo() = bar
+    }
+}
+
 fun main() {
     val customer = Customer()//instance of class customer
 
@@ -10,6 +19,9 @@ fun main() {
     println("Default: ${contact.email}")
     contact.email = "Sensei@gmail.com"//updates property email of instance contact
     println("Updated: ${contact.email}")//calling updated parameter email of instance contact
+
+    val demo = Outer().Inner().foo()
+    println(demo)
 
     val fr = FilledRectangle()
     fr.draw()
