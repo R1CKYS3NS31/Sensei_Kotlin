@@ -29,6 +29,11 @@ enum class IntArithmetics : BinaryOperator<Int>, IntBinaryOperator {
     override fun applyAsInt(left: Int, right: Int): Int = apply(left, right)
 }
 
+/* accessing enum class constants in a generic way */
+inline fun <reified T : Enum<T>> printAllValues() {
+    println(enumValues<T>().joinToString { it.name })
+}
+
 fun main() {
     val red = Color.RED //access enum instance via the class name.instance
     println(red)
@@ -45,9 +50,15 @@ fun main() {
     }
     println(message)
 
+    /* enum constants */
+    for (color in Color.values()) println(color)
+    println("The first color is : ${Color.valueOf("RED")}")
+
     val a = 12
     val b = 21
     for (r in IntArithmetics.values()) {
         println("$r($a,$b) = ${r.apply(a, b)}")
     }
+
+    printAllValues<Color>()
 }
