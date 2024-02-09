@@ -1,7 +1,12 @@
 fun main() {
+    /* the infix notation (omits the dot and the parentheses for the call) */
     infix fun Int.times(str: String) = str.repeat(this)//define infix func on int
     //times()-'*' is an operator function
+
     println(5 times "bye ")//calls infix fun
+    // is the same as
+    println(5.times("bye"))
+
     val pair = "benz" to "Ricky"//infix func 'to' creates pair
     println(pair)
 
