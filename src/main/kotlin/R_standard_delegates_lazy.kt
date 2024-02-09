@@ -8,7 +8,7 @@ val lazyValue: String by lazy {
 /* observable property with delegate*/
 class Guy {
     /* */
-    var name: String by Delegates.observable("no name") { property, oldValue, newValue ->
+    var name: String by Delegates.observable("no name") { _, oldValue, newValue ->
         println("$oldValue -> $newValue")
     }
 }
