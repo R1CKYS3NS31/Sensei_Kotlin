@@ -20,4 +20,23 @@ fun main() {
 
     val func = operation()
     println("the square of 8: ${func(8)}")
+
+    val items = listOf(1, 21, 31, 41, 51, 61)
+    items.fold(0) { acc: Int, i: Int ->
+        print("acc = $acc, i = $i, ")
+        val result = acc + 1
+        println("result = $result")
+        result
+    }
+
+    val joinedToString = items.fold("Element: ", { acc, i -> "$acc $i" })
+    println(joinedToString)
+}
+
+fun <T, R> Collection<T>.fold(initial: R, combine: (acc: R, nextElement: T) -> R): R {
+    var accumulator: R = initial
+    for (element: T in this) {
+        accumulator = combine(accumulator, element)
+    }
+    return accumulator
 }
