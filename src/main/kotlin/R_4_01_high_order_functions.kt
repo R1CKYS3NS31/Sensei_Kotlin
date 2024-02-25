@@ -31,12 +31,36 @@ fun main() {
 
     val joinedToString = items.fold("Element: ", { acc, i -> "$acc $i" })
     println(joinedToString)
+
+    sayHi()
 }
 
-fun <T, R> Collection<T>.fold(initial: R, combine: (acc: R, nextElement: T) -> R): R {
+/*
+* Using higher-order functions imposes certain runtime penalties:
+* each function is an object,
+* and it captures a closure. */
+inline fun <T, R> Collection<T>.fold(initial: R, combine: (acc: R, nextElement: T) -> R): R {
     var accumulator: R = initial
     for (element: T in this) {
         accumulator = combine(accumulator, element)
     }
     return accumulator
+}
+/*
+* Inlining may cause the generated code to grow.
+*  However, if you do it in a reasonable way (avoiding inlining large functions),
+*  it will pay off in performance, especially
+* at "megamorphic" call-sites inside loops.
+*
+* If you don't want all the lambdas passed to an inline function to be inlined,
+* mark some of your function parameters with the noinline modifier*/
+
+inline fun inlined(block: () -> Unit) {
+    println("Hi Ricky!")
+}
+
+fun sayHi() {
+    inlined {
+        return
+    }
 }
