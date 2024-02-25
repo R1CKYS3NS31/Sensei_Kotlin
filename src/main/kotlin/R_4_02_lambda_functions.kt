@@ -30,4 +30,10 @@ fun main() {
     println(listOf(1, 2, 3).fold(0) { x, item ->
         x + item
     })
+
+    println("Function Type")
+    val intPlus: Int.(Int) -> Int = Int::plus
+    println(intPlus.invoke(1, 1))
+    println(intPlus(2, 2))
+    println(2.intPlus(3)) // extension call
 }
